@@ -12,13 +12,13 @@ const ProductsDisplay = () => {
 
   const renderImages = () => {
     return images.map((image, idx) => (
-      <li key={idx} className="w-[400px] h-[400px]">
+      <li key={idx} className="w-[300px] h-[300px] md:w-[400px] md:h-[400px]">
         <Image
           src={image}
           alt={`product-${idx}`}
           width={500}
           height={500}
-          className="object-center w-[400] h-[400px]"
+          className="object-center w-[300px] h-[300px] md:w-[400px] md:h-[400px]"
         />
       </li>
     ));
