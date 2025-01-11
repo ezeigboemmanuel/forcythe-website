@@ -3,7 +3,7 @@ import { Play } from "lucide-react";
 
 const Hero = () => {
   return (
-    <div className="relative w-full h-auto bg-[#030516]">
+    <section className="relative w-full h-auto bg-[#030516]">
       <div className="absolute inset-0 z-10 top-28">
         <Image
           src="/assets/mapbackground.svg"
@@ -42,7 +42,7 @@ const Hero = () => {
           clients’ journey
         </p>
       </div>
-    </div>
+    </section>
   );
 };
 

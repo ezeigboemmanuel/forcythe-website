@@ -4,7 +4,7 @@ const ProductsDisplay = () => {
   const images = [
     "/assets/product1.svg",
     "/assets/product2.svg",
-    "/assets/product3.svg",
+    "/assets/product1.svg",
     "/assets/product4.svg",
     "/assets/product5.svg",
     "/assets/product3.svg",
@@ -12,13 +12,13 @@ const ProductsDisplay = () => {
 
   const renderImages = () => {
     return images.map((image, idx) => (
-      <li key={idx} className="w-[300px] h-[300px]">
+      <li key={idx} className="w-[400px] h-[400px]">
         <Image
           src={image}
           alt={`product-${idx}`}
           width={500}
           height={500}
-          className="object-center object-cover w-[300px] h-[300px]"
+          className="object-center w-[400] h-[400px]"
         />
       </li>
     ));
@@ -31,8 +31,8 @@ const ProductsDisplay = () => {
   };
 
   return (
-    <div className="bg-[#030516] pt-10 pb-20">
-      <div className="w-full flex justify-center items-center mb-5">
+    <section className="bg-[#030516] pt-10 pb-20">
+      <div className="w-full flex justify-center items-center ">
         <article className="">
           <div className="wrapper">
             <ul className="marquee">
@@ -57,7 +57,7 @@ const ProductsDisplay = () => {
           </div>
         </article>
       </div>
-    </div>
+    </section>
   );
 };
 

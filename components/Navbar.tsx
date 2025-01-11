@@ -51,7 +51,7 @@ const Navbar = () => {
         )}
       </div>
 
-      <div className="hidden md:flex space-x-16 items-center">
+      <div className="hidden md:flex md:space-x-8 lg:space-x-16 items-center">
         <Link href="/">
           <Image
             src="/assets/forcythelogo.svg"
@@ -60,7 +60,7 @@ const Navbar = () => {
             height={150}
           />
         </Link>
-        <ul className="flex space-x-4">
+        <ul className="flex md:space-x-2 lg:space-x-4">
           <Link href="/about">
             <li>About</li>
           </Link>
