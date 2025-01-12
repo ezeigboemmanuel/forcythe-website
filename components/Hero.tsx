@@ -5,14 +5,39 @@ import { Play } from "lucide-react";
 import splitString from "@/utils/splitString";
 import splitWord from "@/utils/splitWord";
 import { motion } from "motion/react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Hero = () => {
   const [h1Complete, setH1Complete] = useState(false);
+  const [h1InView, setH1InView] = useState(false);
+  const h1Ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !h1InView) {
+          setH1InView(true);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (h1Ref.current) {
+      observer.observe(h1Ref.current);
+    }
+
+    return () => {
+      if (h1Ref.current) {
+        observer.unobserve(h1Ref.current);
+      }
+    };
+  }, [h1InView]);
+
   const charVariants = {
     hidden: { opacity: 0 },
     reveal: { opacity: 1 },
   };
+
   return (
     <section className="relative w-full h-auto bg-[#030516]">
       <div className="absolute inset-0 z-10 top-28">
@@ -26,10 +51,10 @@ const Hero = () => {
 
       <div className="h-auto pt-28 md:pt-28 pb-12 md:pb-20 flex flex-col px-4 md:px-12 xl:px-24 items-center">
         <div className="bg-white bg-opacity-10 rounded-[33px] md:rounded-[46px] w-full">
-          <div className="px-4 py-6 md:p-10 xl:p-12">
+          <div className="px-4 py-6 md:p-10 xl:p-12" ref={h1Ref}>
             <motion.h1
               initial="hidden"
-              whileInView="reveal"
+              animate={h1InView ? "reveal" : "hidden"}
               transition={{ staggerChildren: 0.09 }}
               onAnimationComplete={() => setH1Complete(true)}
               className="text-[56px] md:text-[80px] z-50 mb-7 leading-[1] max-w-[900px]"
@@ -66,7 +91,7 @@ const Hero = () => {
             </motion.h1>
             <motion.p
               initial="hidden"
-              whileInView={h1Complete ? "reveal" : "hidden"}
+              animate={h1InView && h1Complete ? "reveal" : "hidden"}
               transition={{ staggerChildren: 0.02 }}
               className="z-50 text-[#aea9b1] mb-8 md:text-lg max-w-3xl"
             >
@@ -97,7 +122,7 @@ const Hero = () => {
       <div className="flex flex-col py-10 md:py-0 pb-2 md:-mt-4 px-4 md:px-12 lg:px-24 justify-end items-center">
         <motion.h2
           initial="hidden"
-          whileInView={h1Complete ? "reveal" : "hidden"}
+          animate={h1InView && h1Complete ? "reveal" : "hidden"}
           transition={{ staggerChildren: 0.3 }}
           className="text-[32px] lg:text-[42px] mx-auto leading-[1.3] text-center"
         >
