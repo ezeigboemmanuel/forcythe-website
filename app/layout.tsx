@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lexend.className} antialiased text-white`}>
+      <body className={`${lexend.className} bg-black antialiased text-white`}>
         <Navbar />
         {children}
       </body>

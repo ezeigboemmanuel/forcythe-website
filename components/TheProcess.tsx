@@ -45,13 +45,13 @@ const tabs: TabContent[] = [
 const TheProcess = () => {
   const [activeTab, setActiveTab] = useState(0);
   return (
-    <section className="bg-[#030516] pb-80 px-4 md:px-12 lg:px-24 ">
+    <section className="bg-[#030516] pb-28 px-4 md:px-12 lg:px-24 ">
       <div className="flex flex-col py-10 md:py-0 pb-2 justify-end">
-        <p className="text-[30px] md:text-[36px] lg:text-[42px] leading-[1.3] max-w-3xl">
+        <h2 className="text-[30px] md:text-[36px] lg:text-[42px] leading-[1.3] max-w-3xl">
           From to <span className="text-[#60a6e7]">Spark</span> to{" "}
           <span className="text-[#60a6e7]">Spotlight:</span> we take you every
           step of the way to success.
-        </p>
+        </h2>
       </div>
 
       <div className="flex flex-col md:flex-row md:items-center w-full pt-14">

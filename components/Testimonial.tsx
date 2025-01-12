@@ -24,11 +24,11 @@ const Testimonial = () => {
   return (
     <section className="bg-[#030516] pb-20 md:pb-80">
       <div className="flex flex-col py-10 md:py-0 pb-2 md:-mt-4 px-4 md:px-12 lg:px-24 justify-end items-center">
-        <p className="text-[32px] md:text-[36px] lg:text-[42px] mx-auto leading-[1.3] text-center max-w-4xl">
+        <h2 className="text-[32px] md:text-[36px] lg:text-[42px] mx-auto leading-[1.3] text-center max-w-4xl">
           Discover the{" "}
           <span className="text-[#60a6e7]">transformative stories</span> of
           startups that scaled new heights with us
-        </p>
+        </h2>
       </div>
 
       <div className="w-full overflow-x-scroll no-scrollbar px-4 md:px-12 xl:px-24">
