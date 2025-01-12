@@ -120,7 +120,7 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-t-[#60a6e7] text-[#b3d0f2] text-sm text-center md:text-left">
-        <p className="pt-4 pb-8">Copyright © 2024 Forcythe. All rights reserved.</p>
+        <p className="pt-4 pb-10">Copyright © 2024 Forcythe. All rights reserved.</p>
       </div>
     </div>
   );
