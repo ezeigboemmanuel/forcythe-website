@@ -6,6 +6,18 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const Testimonial = () => {
+  const [activeTab, setActiveTab] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveTab((prevTab) => (prevTab % TABS_DATA.length) + 1);
+    }, 1500);
+
+    console.log("Rerendered");
+
+    return () => clearInterval(interval);
+  }, [activeTab]);
+
   const companyCommonStyles =
     "min-h-[64px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border border-[#06438C] cursor-pointer relative";
 
@@ -105,18 +117,6 @@ const Testimonial = () => {
       hasLabel: false,
     },
   ];
-
-  // State to track the active tab
-  const [activeTab, setActiveTab] = useState(1);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveTab((prevTab) => (prevTab % TABS_DATA.length) + 1);
-    }, 15000);
-
-    return () => clearInterval(interval);
-  }, [activeTab]);
-  
 
   const charVariants = {
     hidden: { opacity: 0 },
