@@ -43,7 +43,7 @@ const Blog = () => {
       </div>
 
       <div className="mt-10">
-        <div className="flex flex-col lg:flex-row justify-center items-center space-x-10 w-full">
+        <div className="flex flex-col lg:flex-row justify-center items-center space-y-8 lg:space-x-10 w-full">
           {posts.map((post, index) => (
             <Link href="/blog/blog_id" key={index} className="w-full rounded-[20px] cursor-pointer">
               <div className="relative w-full h-60 ">

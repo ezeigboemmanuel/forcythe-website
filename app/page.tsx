@@ -1,5 +1,6 @@
 import Blog from "@/components/Blog";
 import CTA from "@/components/CTA";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import ProductsDisplay from "@/components/ProductsDisplay";
 import Testimonial from "@/components/Testimonial";
@@ -16,6 +17,7 @@ export default function Home() {
       <Values />
       <Blog />
       <CTA />
+      <Footer />
     </main>
   );
 }

@@ -73,11 +73,11 @@ const Navbar = () => {
           <Image
             src="/assets/forcythelogo.svg"
             alt="logo"
-            width={150}
-            height={150}
+            width={140}
+            height={140}
           />
         </Link>
-        <ul className="flex md:space-x-2">
+        <ul className="flex">
           <Link href="/about">
             <li>About</li>
           </Link>

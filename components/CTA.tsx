@@ -1,6 +1,6 @@
 const CTA = () => {
   return (
-    <div className="bg-gradient-to-b from-[#030516]  to-[#0c2645] flex flex-col justify-center items-center pb-20 px-4 md:px-12 xl:px-24">
+    <div className="bg-gradient-to-b from-[#030516] via-[#071626] to-[#071626] flex flex-col justify-center items-center pb-28 px-4 md:px-12 xl:px-24">
       <div className="max-w-[720px] mx-auto text-center mb-6">
         <h2 className="text-[30px] md:text-[36px] lg:text-[42px] leading-[1.3] text-[#60a6e7]">
           Ready to Scale?
