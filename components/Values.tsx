@@ -24,7 +24,7 @@ const Values = () => {
         Your best call for B2B/B2C product innovation
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 pb-48 gap-8 mt-10 px-4 md:px-12 lg:px-24">
+      <div className="grid grid-cols-1 md:grid-cols-3 pb-48 gap-8 mt-10 px-4 md:px-12 xl:px-24">
         {values.map((value, index) => (
           <div
             key={index}
@@ -48,7 +48,7 @@ const Values = () => {
       </div>
 
       <div className="w-full bg-gradient-to-t from-[#030516] via-[#061527] to-[#0c2645] flex md:justify-center md:items-center overflow-hidden">
-        <div className="relative w-full h-[300px] md:w-[600px] md:h-[400px] lg:w-[830px] lg:h-[460px] px-4 md:px-12 lg:px-24">
+        <div className="relative w-full h-[300px] md:w-[600px] md:h-[400px] lg:w-[830px] lg:h-[460px] px-4 md:px-12 xl:px-24">
           <div className="absolute bottom-0 left-0 w-full h-full rounded-t-full bg-gradient-to-b from-white/10 via-transparent to-[#030516] border-t-2 border-blue-200">
             <div className="h-full place-content-end md:h-auto md:absolute bottom-2 right-8 md:right-6 lg:right-36">
               <h2 className="font-medium text-xl md:text-2xl lg:text-3xl text-center mb-10 lg:mb-16 max-w-[304px] md:max-w-md mx-auto">
