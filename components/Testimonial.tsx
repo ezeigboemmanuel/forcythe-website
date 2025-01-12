@@ -22,7 +22,7 @@ const Testimonial = () => {
   }, [tabs.length]);
 
   return (
-    <section className="bg-[#030516] pb-80">
+    <section className="bg-[#030516] pb-20 md:pb-80">
       <div className="flex flex-col py-10 md:py-0 pb-2 md:-mt-4 px-4 md:px-12 lg:px-24 justify-end items-center">
         <p className="text-[32px] md:text-[36px] lg:text-[42px] mx-auto leading-[1.3] text-center max-w-4xl">
           Discover the{" "}
@@ -104,7 +104,7 @@ const Testimonial = () => {
         </div>
       </div>
 
-      <div className="w-full px-4 md:px-12 lg:px-24 relative mt-5 pb-80">
+      <div className="w-full px-4 md:px-12 lg:px-24 relative mt-5 md:pb-60">
         {activeTab === 1 && (
           <div className="bg-[#0c2645] md:absolute w-full md:w-[70%] lg:w-[40%] flex flex-col sm:flex-row p-5 sm:p-7 rounded-[28px]">
             <div className="sm:basis-[58%] pr-3">

@@ -28,7 +28,7 @@ const Hero = () => {
             </p>
             <div className="group relative z-30 inline-block">
               <div className="w-[144px] h-12 border border-dashed border-white rounded-full  group-hover:border-[#0066cc]"></div>
-              <button className="absolute left-1 -top-1 lg:right-[90px] font-semibold text-black bg-white w-[144px] h-12 rounded-full group-hover:bg-[#154b81] group-hover:text-white transition ease-in-out delay-150 flex items-center justify-center">
+              <button className="absolute left-1 -top-1 lg:right-[90px] font-semibold text-black bg-white w-[144px] h-12 rounded-full group-hover:bg-[#154b81] group-hover:text-white transition ease-in-out flex items-center justify-center">
                 Book a Call <Play className="w-4 h-4 ml-2 fill-black group-hover:fill-white" />
               </button>
             </div>

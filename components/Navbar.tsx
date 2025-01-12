@@ -2,10 +2,27 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <nav className="flex justify-between space-x-4 items-center px-4 md:px-12 xl:px-24 h-[105px] backdrop-blur-md fixed z-50 top-0 left-0 right-0 mx-auto">
       <Link href="/" className="md:hidden">
@@ -16,7 +33,7 @@ const Navbar = () => {
           height={110}
         />
       </Link>
-      <div className="md:hidden relative">
+      <div className="md:hidden relative" ref={dropdownRef}>
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="bg-white bg-opacity-10 rounded-md p-3 cursor-pointer"
@@ -25,7 +42,7 @@ const Navbar = () => {
         </button>
 
         {isOpen && (
-          <ul className="flex flex-col space-y-6 fixed z-50 top-28 right-5 py-11 px-5 bg-gradient-to-b from-[#0c2645] via-[#000000] to-[#000000] w-60 rounded-[33px]">
+          <ul className="flex flex-col space-y-2 fixed z-50 top-28 right-5 py-8 px-5 bg-gradient-to-b from-[#0c2645] via-[#000000] to-[#000000] w-60 rounded-[33px]">
             <Link href="/about">
               <li>About</li>
             </Link>
@@ -60,7 +77,7 @@ const Navbar = () => {
             height={150}
           />
         </Link>
-        <ul className="flex md:space-x-2 lg:space-x-4">
+        <ul className="flex md:space-x-2">
           <Link href="/about">
             <li>About</li>
           </Link>
