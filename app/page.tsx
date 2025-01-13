@@ -17,7 +17,6 @@ export default function Home() {
       <Values />
       <Blog />
       <CTA />
-      <Footer />
     </main>
   );
 }

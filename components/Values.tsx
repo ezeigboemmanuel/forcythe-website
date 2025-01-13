@@ -1,4 +1,9 @@
+"use client";
+
+import splitWord from "@/utils/splitWord";
 import Image from "next/image";
+import { motion } from "motion/react";
+import AnimatedCounter from "./Counter";
 
 const Values = () => {
   const values = [
@@ -18,11 +23,32 @@ const Values = () => {
         "Maximising impact, minimising costs efficiency is key. We provide cost-effective solutions without compromising on quality.",
     },
   ];
+
+  const charVariants = {
+    hidden: { opacity: 0 },
+    reveal: { opacity: 1 },
+  };
   return (
     <section className="bg-gradient-to-b from-[#030516] via-[#0c2645] to-[#0c2645]">
-      <h2 className="text-[30px] md:text-[36px] lg:text-[42px] leading-[1.3] text-center text-[#b3d0f2] px-4 md:px-12 lg:px-24">
-        Your best call for B2B/B2C product innovation
-      </h2>
+      <motion.h2
+        initial="hidden"
+        whileInView="reveal"
+        transition={{ staggerChildren: 0.3 }}
+        className="text-[30px] md:text-[36px] lg:text-[42px] leading-[1.3] text-center text-[#b3d0f2] px-4 md:px-12 lg:px-24"
+        viewport={{ once: true }}
+      >
+        {splitWord("Your best call for B2B/B2C product innovation").map(
+          (char, index) => (
+            <motion.span
+              key={index}
+              transition={{ duration: 2 }}
+              variants={charVariants}
+            >
+              {char}
+            </motion.span>
+          )
+        )}
+      </motion.h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 pb-48 gap-8 mt-10 px-4 md:px-12 xl:px-24">
         {values.map((value, index) => (
@@ -41,7 +67,23 @@ const Values = () => {
 
             <div>
               <h3 className="text-2xl font-medium mb-5">{value.title}</h3>
-              <p className="md:text-lg text-[#a5a5a5]">{value.description}</p>
+              <motion.p
+                initial="hidden"
+                whileInView="reveal"
+                transition={{ staggerChildren: 0.18 }}
+                className="md:text-lg text-[#a5a5a5]"
+                viewport={{ once: true }} // Ensures animation happens only once when the element enters view
+              >
+                {splitWord(value.description).map((char, index) => (
+                  <motion.span
+                    key={index} // Unique key for each character within the description
+                    transition={{ duration: 1.5 }}
+                    variants={charVariants}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+              </motion.p>
             </div>
           </div>
         ))}
@@ -51,34 +93,79 @@ const Values = () => {
         <div className="relative w-full h-[300px] md:w-[600px] md:h-[400px] lg:w-[830px] lg:h-[460px] px-4 md:px-12 xl:px-24">
           <div className="absolute bottom-0 left-0 w-full h-full rounded-t-full bg-gradient-to-b from-white/10 via-transparent to-[#030516] border-t-2 border-blue-200">
             <div className="h-full place-content-end md:h-auto md:absolute bottom-2 right-8 md:right-6 lg:right-36">
-              <h2 className="font-medium text-xl md:text-2xl lg:text-3xl text-center mb-10 lg:mb-16 max-w-[304px] md:max-w-md mx-auto">
-                We build solutions that help{" "}
-                <span className="text-[#60a6e7]">businesses</span> of all sizes
-                to <span className="text-[#60a6e7]">scale</span>
-              </h2>
+              <motion.h2
+                initial="hidden"
+                whileInView="reveal"
+                transition={{ staggerChildren: 0.3 }}
+                className="font-medium text-xl md:text-2xl lg:text-3xl text-center mb-10 lg:mb-16 max-w-[304px] md:max-w-md mx-auto"
+                viewport={{ once: true }}
+              >
+                {splitWord("We build solutions that help").map(
+                  (char, index) => (
+                    <motion.span
+                      key={index}
+                      transition={{ duration: 2 }}
+                      variants={charVariants}
+                    >
+                      {char}
+                    </motion.span>
+                  )
+                )}{" "}
+                <span className="text-[#60a6e7]">
+                  {splitWord("businesses").map((char, index) => (
+                    <motion.span
+                      key={index}
+                      transition={{ duration: 2 }}
+                      variants={charVariants}
+                    >
+                      {char}
+                    </motion.span>
+                  ))}
+                </span>{" "}
+                {splitWord("of all sizes to").map((char, index) => (
+                  <motion.span
+                    key={index}
+                    transition={{ duration: 2 }}
+                    variants={charVariants}
+                  >
+                    {char}
+                  </motion.span>
+                ))}{" "}
+                <span className="text-[#60a6e7]">
+                  {splitWord("scale").map((char, index) => (
+                    <motion.span
+                      key={index}
+                      transition={{ duration: 2 }}
+                      variants={charVariants}
+                    >
+                      {char}
+                    </motion.span>
+                  ))}
+                </span>
+              </motion.h2>
 
               <div className="flex justify-center items-center space-x-4 md:space-x-9">
                 <div className="flex flex-col justify-center md:-space-y-3">
                   <h3 className="text-[#60a6e7] text-[1.7rem] sm:text-[2rem] md:text-[3rem] font-medium">
-                    50+
+                    <AnimatedCounter from={0} to={50} />+
                   </h3>
                   <p className="md:text-lg">Clients</p>
                 </div>
                 <div className="flex flex-col justify-center md:-space-y-3">
                   <h3 className="text-[#60a6e7] text-[1.7rem] sm:text-[2rem] md:text-[3rem] font-medium">
-                    120+
+                    <AnimatedCounter from={0} to={120} />+
                   </h3>
                   <p className="md:text-lg">Projects</p>
                 </div>
                 <div className="flex flex-col justify-center md:-space-y-3">
                   <h3 className="text-[#60a6e7] text-[1.7rem] sm:text-[2rem] md:text-[3rem] font-medium">
-                    10+
+                    <AnimatedCounter from={0} to={10} />+
                   </h3>
                   <p className="md:text-lg text-nowrap">Team Leads</p>
                 </div>
                 <div className="flex flex-col justify-center md:-space-y-3">
                   <h3 className="text-[#60a6e7] text-[1.7rem] sm:text-[2rem] md:text-[3rem] font-medium">
-                    10+
+                    <AnimatedCounter from={0} to={10} />+
                   </h3>
                   <p className="md:text-lg text-nowrap">Glorious Years</p>
                 </div>

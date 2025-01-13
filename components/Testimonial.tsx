@@ -11,9 +11,7 @@ const Testimonial = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveTab((prevTab) => (prevTab % TABS_DATA.length) + 1);
-    }, 1500);
-
-    console.log("Rerendered");
+    }, 12000);
 
     return () => clearInterval(interval);
   }, [activeTab]);
@@ -199,13 +197,14 @@ const Testimonial = () => {
         {TABS_DATA.map((tab) => {
           if (activeTab === tab.id) {
             return (
-              <div
-                key={tab.id}
+              <motion.div
+                key={activeTab}
                 className={`bg-[#0c2645] md:absolute ${tab.position} w-full md:w-[70%] lg:w-[40%] flex flex-col sm:flex-row p-5 sm:p-7 rounded-[28px]`}
               >
-                <div className="sm:basis-[58%] pr-3">
+                <motion.div key={activeTab} className="sm:basis-[58%] pr-3">
                   <p className="font-semibold mb-4">{tab.title}</p>
                   <motion.p
+                    key={activeTab}
                     initial="hidden"
                     whileInView="reveal"
                     transition={{ staggerChildren: 0.08 }}
@@ -236,7 +235,7 @@ const Testimonial = () => {
                       </motion.span>
                     ))}
                   </motion.p>
-                </div>
+                </motion.div>
                 <div className="sm:basis-[42%] relative w-full h-[400px] mt-3 md:mt-0 md:ml-3">
                   <Image
                     src={tab.image}
@@ -245,7 +244,7 @@ const Testimonial = () => {
                     className="object-cover object-center rounded-xl"
                   />
                 </div>
-              </div>
+              </motion.div>
             );
           }
           return null;
