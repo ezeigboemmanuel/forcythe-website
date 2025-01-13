@@ -72,11 +72,11 @@ const Values = () => {
                 whileInView="reveal"
                 transition={{ staggerChildren: 0.18 }}
                 className="md:text-lg text-[#a5a5a5]"
-                viewport={{ once: true }} 
+                viewport={{ once: true }}
               >
                 {splitWord(value.description).map((char, index) => (
                   <motion.span
-                    key={index} 
+                    key={index}
                     transition={{ duration: 1.5 }}
                     variants={charVariants}
                   >
@@ -146,28 +146,30 @@ const Values = () => {
 
               <div className="flex justify-center items-center space-x-4 md:space-x-9">
                 <div className="flex flex-col justify-center md:-space-y-3">
-                  <h3 className="text-[#60a6e7] text-[1.7rem] sm:text-[2rem] md:text-[3rem] font-medium">
+                  <h3 className="text-[#60a6e7] text-[1.5rem] sm:text-[2rem] md:text-[3rem] font-medium">
                     <AnimatedCounter from={0} to={50} />+
                   </h3>
-                  <p className="md:text-lg">Clients</p>
+                  <p className="text-sm md:text-lg">Clients</p>
                 </div>
                 <div className="flex flex-col justify-center md:-space-y-3">
-                  <h3 className="text-[#60a6e7] text-[1.7rem] sm:text-[2rem] md:text-[3rem] font-medium">
+                  <h3 className="text-[#60a6e7] text-[1.5rem] sm:text-[2rem] md:text-[3rem] font-medium">
                     <AnimatedCounter from={0} to={120} />+
                   </h3>
-                  <p className="md:text-lg">Projects</p>
+                  <p className="text-sm md:text-lg">Projects</p>
                 </div>
                 <div className="flex flex-col justify-center md:-space-y-3">
-                  <h3 className="text-[#60a6e7] text-[1.7rem] sm:text-[2rem] md:text-[3rem] font-medium">
+                  <h3 className="text-[#60a6e7] text-[1.5rem] sm:text-[2rem] md:text-[3rem] font-medium">
                     <AnimatedCounter from={0} to={10} />+
                   </h3>
-                  <p className="md:text-lg text-nowrap">Team Leads</p>
+                  <p className="text-sm md:text-lg text-nowrap">Team Leads</p>
                 </div>
                 <div className="flex flex-col justify-center md:-space-y-3">
-                  <h3 className="text-[#60a6e7] text-[1.7rem] sm:text-[2rem] md:text-[3rem] font-medium">
+                  <h3 className="text-[#60a6e7] text-[1.5rem] sm:text-[2rem] md:text-[3rem] font-medium">
                     <AnimatedCounter from={0} to={10} />+
                   </h3>
-                  <p className="md:text-lg text-nowrap">Glorious Years</p>
+                  <p className="text-sm md:text-lg text-nowrap">
+                    Glorious Years
+                  </p>
                 </div>
               </div>
             </div>
