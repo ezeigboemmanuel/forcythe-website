@@ -117,7 +117,7 @@ const Testimonial = () => {
   ];
 
   const charVariants = {
-    hidden: { opacity: 0.02 },
+    hidden: { opacity: 0 },
     reveal: { opacity: 1 },
   };
 
