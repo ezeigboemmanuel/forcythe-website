@@ -67,33 +67,35 @@ const Blog = () => {
       </div>
 
       <div className="mt-10">
-        <div className="flex flex-col lg:flex-row justify-center items-center space-y-8 lg:space-x-10 w-full">
+        <div className="flex flex-col justify-center items-center lg:flex-row lg:justify-normal lg:items-start space-y-8 lg:space-y-0 lg:space-x-12 w-full overflow-hidden h-full">
           {posts.map((post, index) => (
             <Link
               href="/blog/blog_id"
               key={index}
-              className="w-full rounded-[20px] cursor-pointer"
+              className="w-full rounded-[20px] cursor-pointer group h-full"
             >
-              <div className="relative w-full h-60 ">
-                <Image
-                  src={post.image}
-                  alt="blog_img"
-                  fill
-                  className="object-cover object-center rounded-[20px]"
-                />
-              </div>
-
-              <div className="border-l px-5 mt-6">
-                <p className="text-lg font-semibold">{post.category}</p>
-                <div className="flex items-center -mt-2 text-[#a5a5a5]">
-                  <p>{post.author}</p>
-                  <span className="text-white">
-                    <Dot className="w-11 h-11 -ml-2 -mr-2 !fill-white" />
-                  </span>
-                  <p>{post.date}</p>
+              <div className="h-full rounded-[20px] group-hover:border-b group-hover:border-[#60a6e7] pb-10">
+                <div className="relative w-full h-60 rounded-[20px] overflow-hidden">
+                  <Image
+                    src={post.image}
+                    alt="blog_img"
+                    fill
+                    className="object-cover object-center rounded-[20px] min-w-60 min-h-60 group-hover:min-w-64 group-hover:min-h-64 transition-all ease-in-out duration-300"
+                  />
                 </div>
 
-                <h3 className="font-semibold text-2xl mt-2">{post.title}</h3>
+                <div className="border-l pl-4 mt-6 ml-0 group-hover:ml-5 transition-all ease-in-out duration-300">
+                  <p className="text-lg font-semibold">{post.category}</p>
+                  <div className="flex items-center -mt-2 text-[#a5a5a5]">
+                    <p>{post.author}</p>
+                    <span className="text-white">
+                      <Dot className="w-11 h-11 -ml-2 -mr-2 !fill-white" />
+                    </span>
+                    <p>{post.date}</p>
+                  </div>
+
+                  <h3 className="font-semibold text-2xl mt-2">{post.title}</h3>
+                </div>
               </div>
             </Link>
           ))}
