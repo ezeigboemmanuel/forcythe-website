@@ -34,7 +34,7 @@ const Hero = () => {
   }, [h1InView]);
 
   const charVariants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 0.01 },
     reveal: { opacity: 1 },
   };
 
