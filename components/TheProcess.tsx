@@ -58,7 +58,7 @@ const TheProcess = () => {
           whileInView="reveal"
           transition={{ staggerChildren: 0.3 }}
           className="text-[30px] md:text-[36px] lg:text-[40px] leading-[1.3] max-w-[775px]"
-          viewport={{ once: true }} // Ensures animation happens only once when the element enters view
+          viewport={{ once: true }}
         >
           {splitWord("From to").map((char, index) => (
             <motion.span
@@ -133,16 +133,16 @@ const TheProcess = () => {
           {/* Active Tab Title and Description */}
           <div className="flex flex-col justify-center p-4">
             <motion.h2
-              key={`title-${activeTab}`} // Unique key based on active tab index
+              key={`title-${activeTab}`}
               initial="hidden"
               whileInView="reveal"
               transition={{ staggerChildren: 0.18 }}
               className="text-2xl font-semibold text-[1.8rem] sm:text-[2rem] leading-8 mb-10"
-              viewport={{ once: true }} // Ensures animation happens only once when the element enters view
+              viewport={{ once: true }} 
             >
               {splitWord(tabs[activeTab].title).map((char, index) => (
                 <motion.span
-                  key={`title-char-${index}-${activeTab}`} // Unique key for each character within the title
+                  key={`title-char-${index}-${activeTab}`}
                   transition={{ duration: 1.5 }}
                   variants={charVariants}
                 >
@@ -157,11 +157,11 @@ const TheProcess = () => {
               whileInView="reveal"
               transition={{ staggerChildren: 0.18 }}
               className="text-[#a5a5a5] mb-8 text-base md:text-lg leading-7"
-              viewport={{ once: true }} // Ensures animation happens only once when the element enters view
+              viewport={{ once: true }} 
             >
               {splitWord(tabs[activeTab].description).map((char, index) => (
                 <motion.span
-                  key={`description-char-${index}-${activeTab}`} // Unique key for each character within the description
+                  key={`description-char-${index}-${activeTab}`}
                   transition={{ duration: 1.5 }}
                   variants={charVariants}
                 >

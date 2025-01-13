@@ -72,11 +72,11 @@ const Values = () => {
                 whileInView="reveal"
                 transition={{ staggerChildren: 0.18 }}
                 className="md:text-lg text-[#a5a5a5]"
-                viewport={{ once: true }} // Ensures animation happens only once when the element enters view
+                viewport={{ once: true }} 
               >
                 {splitWord(value.description).map((char, index) => (
                   <motion.span
-                    key={index} // Unique key for each character within the description
+                    key={index} 
                     transition={{ duration: 1.5 }}
                     variants={charVariants}
                   >
