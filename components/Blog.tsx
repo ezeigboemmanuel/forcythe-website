@@ -31,7 +31,7 @@ const Blog = () => {
   ];
 
   const charVariants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 0.02 },
     reveal: { opacity: 1 },
   };
   return (

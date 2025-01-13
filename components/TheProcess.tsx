@@ -47,7 +47,7 @@ const tabs: TabContent[] = [
 const TheProcess = () => {
   const [activeTab, setActiveTab] = useState(0);
   const charVariants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 0.02 },
     reveal: { opacity: 1 },
   };
   return (
