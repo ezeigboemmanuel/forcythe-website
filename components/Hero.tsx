@@ -43,6 +43,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-10 top-28">
         <Image
           src="/assets/mapbackground.svg"
+          quality={70}
           fill
           alt="background-img"
           className="object-cover object-center"
@@ -63,7 +64,7 @@ const Hero = () => {
                 <motion.span
                   key={index}
                   transition={{ duration: 0.1 }}
-                  variants={charVariants}
+                  // variants={charVariants}
                 >
                   {char}
                 </motion.span>
