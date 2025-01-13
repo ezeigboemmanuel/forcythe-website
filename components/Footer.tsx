@@ -29,7 +29,7 @@ const Footer = () => {
       link: "/",
     },
     {
-      icon: "/assets/icon.svg",
+      icon: "/assets/Icon.svg",
       link: "/",
     },
   ];
@@ -98,7 +98,7 @@ const Footer = () => {
               {icons.map((icon, index) => (
                 <Link key={index} href="/">
                   <div className="border border-[#60a6e7] w-9 h-9 rounded-full flex items-center justify-center">
-                    <Image src={icon.icon} alt="logo" width={20} height={20} />
+                    <Image src={icon.icon} alt="icon" width={20} height={20} />
                   </div>
                 </Link>
               ))}
